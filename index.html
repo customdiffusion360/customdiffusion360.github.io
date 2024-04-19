@@ -79,7 +79,7 @@
                 </svg>
                 Code
             </a>
-            <a class="btn btn-light" role="button" href="https://arxiv.org/abs/2303.13516">
+            <a class="btn btn-light" role="button" href="http://arxiv.org/abs/2404.12333">
                 <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"></path>
                 </svg>Paper
@@ -96,12 +96,12 @@
                 </svg>
                 Gallery
             </a>
-             <!-- <a class="btn btn-light" role="button" href="https://huggingface.co/spaces/nupurkmr9/concept-ablation">
+             <a class="btn btn-light" role="button" href="https://huggingface.co/spaces/customdiffusion360/customdiffusion360">
                 <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 375 531">
                     <img src="images/huggingface_logo-noborder.svg" style="width:24px;height:24px;margin-left:-12px;margin-right:12px"/>
                 </svg>
                 Demo
-            </a> -->
+            </a>
         </div>
     </div>
 
@@ -123,7 +123,8 @@
     <div class="container" style="max-width: 1200px;">
         <div class="row">
             <div class="col-md-12">
-                <h2>Abstract</h2>
+                <center><h2>Abstract</h2></center>
+                <!-- <h2>Abstract</h2> -->
                 <p>
                     Model customization introduces new concepts to existing text-to-image models, enabling generation of the new concept in novel contexts.
                     However, such methods lack accurate camera view control w.r.t the object, and users must resort to prompt engineering (e.g., adding ``top-view'') to achieve coarse view control. In this work, we introduce a new task -- enabling explicit control of camera viewpoint for model customization. This allows us to modify object properties amongst various background scenes via text prompts, all while incorporating the target camera pose as additional control. This new task presents significant challenges in merging a 3D representation from the multi-view images of the new concept with a general, 2D text-to-image model. To bridge this gap, we propose to condition the 2D diffusion process on rendered, view-dependent features of the new object. During training, we jointly adapt the 2D diffusion modules and 3D feature predictions to reconstruct the object's appearance and geometry while reducing overfitting to the input multi-view images. Our method performs on par or better than existing image editing and model personalization baselines in preserving the custom object's identity while following the input text prompt and camera pose for the object.  
@@ -140,7 +141,7 @@
     <div class="container" style="max-width: 1200px;">
         <div class="row">
             <div class="col-md-12">
-                <h2>Algorithm</h2>
+                <center><h2>Algorithm</h2></center>
                 <p>
                 Given multi-view images of a target concept <strong>Teddy bear</strong> our method customizes a text-to-image diffusion model with that concept with an additional condition of target camera pose. We modify a subset of transformer layers to be pose-conditioned. This is done by adding a new FeatureNeRF block in intermediate feature space of the transformer layer. We finetune the new weights with the multiview dataset while keeping pre-trained model weights frozen. 
                 </p>
@@ -160,7 +161,7 @@
     <div class="container" style="max-width: 1200px;">
         <div class="row">
             <div class="col-md-12">
-                <h2>Comparison to Baselines</h2>
+                <center><h2>Comparison to Baselines</h2></center>
                 All our results are based SDXL model. We customize the model on various categories of multiview images, e.g., car, teddybear, toys, motorcycle. We compare our method with image-editing methods, 3D NeRF editing methods, and Customization methods. Specifically, we comapre with <strong>SDEdit</strong>, <strong>LEDITS++</strong>, <strong>ViCA NeRF</strong>, and our proposed baseline of <strong>LoRA + Camera pose</strong> where we concatenate camera matrix with the text prompt.
                 <p></p><p></p>
                 <div style="text-align: center;">
@@ -176,8 +177,8 @@
         <hr style="max-width: 1000px;">
         <div class="row">
             <div class="col-md-12">
-                <h2>Results with different target camera pose and text prompt</h2>
-                We show results of varying the target camera pose and text prompt for each custom concept.</strong>
+                <center><h2>Results</h2></center>
+                We show results of varying the target camera pose and text prompt for each custom concept. More results are shown on the <a href="results.html">Gallery</a>.
                 <p></p><p></p>
                 <div id="singleconceptscroll" class="container" style="max-width: 1200px; ">
                 <br>
@@ -217,7 +218,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h2>Limitations </h2>
-                <p> Our method has still various limitations. It fails when we extrapolate the target camera pose too far from the seen training views. The SDXL model has a bias to generate front facing object in such scenarios. It also sometimes fails to incoroporate the text prompt, especially when composing with another object.
+                <p> Our method has still various limitations. It fails when we extrapolate the target camera pose far from the seen training views. The SDXL model has a bias to generate front facing object in such scenarios. It also sometimes fails to incoroporate the text prompt, especially when composing with another object.
                 <p></p><p></p>
                 <div id="limitation" class="container" style="max-width: 1200px;">
 
@@ -241,7 +242,7 @@
                     @article{kumari2024customdiffusion360,<br>
                     &nbsp; author = {Kumari, Nupur and Su, Grace and Zhang, Richard and Park, Taesung and Shechtman, Eli and Zhu, Jun-Yan},<br>
                     &nbsp; title  = {Customizing Text-to-Image Diffusion with Camera Viewpoint Control},<br>
-                    &nbsp; journal = Arxiv,<br>
+                    &nbsp; journal = {Arxiv},<br>
                     &nbsp; year   = {2024},<br>
                 }</code>
             </div>
@@ -259,8 +260,6 @@
                     <li> Ta-Ying Cheng, Matheus Gadelha, Thibault Groueix, Matthew Fisher, Radomir Mech, Andrew Markham, and Niki Trigoni. <a href="https://ttchengab.github.io/continuous_3d_words">Learning Continuous 3D Words for Text-to-Image Generation.</a> CVPR 2024.</li><br>
 
                     <li> Lukas Höllein, Aljaž Božič, Norman Müller, David Novotny, Hung-Yu Tseng, Christian Richardt, Michael Zollhöfer, and Matthias Nießner. <a href="https://lukashoel.github.io/ViewDiff/">Viewdiff: 3d-consistent image generation with text-to-image models.</a> CVPR 2024.</li><br>
-                    
-                    <li> Ziyang Yuan, Mingdeng Cao, Xintao Wang, Zhongang Qi, Chun Yuan, and Ying Shan. <a href="https://jiangyzy.github.io/CustomNet/">Customnet: Zero-shot object customization with variable-viewpoints in text-to-image diffusion models.</a> Arxiv.</li><br>
 
                 </ul> 
             </h5>               
