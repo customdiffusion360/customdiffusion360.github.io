@@ -14,7 +14,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Customizing Text-to-Image Diffusion with Camera Viewpoint Control</title>
+    <title>Customizing Text-to-Image Diffusion with Object Viewpoint Control</title>
     <link rel="stylesheet" href="images/bootstrap.min.css">
     <link href="images/css.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="images/Highlight-Clean.css">
@@ -22,19 +22,19 @@
 
     <link rel="manifest" href=images/site.webmanifest">
 
-    <meta name="description" content="Customizing Text-to-Image Diffusion with Camera Viewpoint Control, 2023.">
+    <meta name="description" content="Customizing Text-to-Image Diffusion with Object Viewpoint Control, 2023.">
     <meta property="og:url" content="https://customdiffusion360.github.io">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Customizing Text-to-Image Diffusion with Camera Viewpoint Control">
-    <meta property="og:description" content="Customizing Text-to-Image Diffusion with Camera Viewpoint Control, 2023.">
+    <meta property="og:title" content="Customizing Text-to-Image Diffusion with Object Viewpoint Control">
+    <meta property="og:description" content="Customizing Text-to-Image Diffusion with Object Viewpoint Control, 2023.">
     <meta property="og:image" content="https://customdiffusion360.github.io/images/mainpage/thumbnail.jpg">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="github.io">
     <meta property="twitter:url" content="https://customdiffusion360.github.io">
-    <meta name="twitter:title" content="Customizing Text-to-Image Diffusion with Camera Viewpoint Control">
-    <meta name="twitter:description" content="Customizing Text-to-Image Diffusion with Camera Viewpoint Control, 2023.">
+    <meta name="twitter:title" content="Customizing Text-to-Image Diffusion with Object Viewpoint Control">
+    <meta name="twitter:description" content="Customizing Text-to-Image Diffusion with Object Viewpoint Control, 2023.">
     <meta name="twitter:image" content="https://customdiffusion360.github.io/images/mainpage/thumbnail.jpg">
 
 
@@ -54,7 +54,7 @@
     
     <div class="highlight-clean d-flex flex-column align-items-center justify-content-center" style="padding-bottom: 20px;">
         <div class="container" style="padding-bottom: 10px; max-width: 1000px;">
-            <h1 class="text-center">Customizing Text-to-Image Diffusion with Camera Viewpoint Control</h1>
+            <h1 class="text-center">Customizing Text-to-Image Diffusion with Object Viewpoint Control</h1>
         </div>
         <div class="container  d-flex flex-column align-items-center justify-content-center" style="max-width: 900px;">
             <div class="row authors" style="padding-bottom: 20px;">
@@ -70,7 +70,7 @@
                 <div class="col-sm-12">
                     <h3 class="text-center"><sup>1</sup> CMU  &nbsp&nbsp <sup>2</sup>Adobe Research</h3>
                 </div>
-            </div>    
+            </div>  
         </div>
         <div class="buttons" style="margin-bottom: 8px;">
             <a class="btn btn-light" role="button" href="https://github.com/customdiffusion360/custom-diffusion360">
@@ -110,7 +110,7 @@
             <div class="col-md-12">
                 <!-- Large format devices -->
                 <center><img src="images/mainpage/teaser.jpg" style="width: 90%;"/></center>
-                <p>Our method allows additional control on the camera viewpoint of the custom object in generated images by text-to-image diffusion models, such as Stable Diffusion. Given a 360 degree mutliview dataset (~50 images), we fine-tune FeatureNeRF blocks in the intermediate feature space of the diffusion model to condition the generation of the object in a target camera pose.
+                <p>Our method allows additional control on the object viewpoint of the custom object in generated images by text-to-image diffusion models, such as Stable Diffusion. Given a 360 degree mutliview dataset (~50 images), we fine-tune FeatureNeRF blocks in the intermediate feature space of the diffusion model to condition the generation of the object in a target camera pose.
                 </p><p></p>
                 <h6 class="caption"></h6>
             </div>
@@ -127,7 +127,7 @@
                 <!-- <h2>Abstract</h2> -->
                 <p>
                     Model customization introduces new concepts to existing text-to-image models, enabling generation of the new concept in novel contexts.
-                    However, such methods lack accurate camera view control w.r.t the object, and users must resort to prompt engineering (e.g., adding ``top-view'') to achieve coarse view control. In this work, we introduce a new task -- enabling explicit control of camera viewpoint for model customization. This allows us to modify object properties amongst various background scenes via text prompts, all while incorporating the target camera pose as additional control. This new task presents significant challenges in merging a 3D representation from the multi-view images of the new concept with a general, 2D text-to-image model. To bridge this gap, we propose to condition the 2D diffusion process on rendered, view-dependent features of the new object. During training, we jointly adapt the 2D diffusion modules and 3D feature predictions to reconstruct the object's appearance and geometry while reducing overfitting to the input multi-view images. Our method performs on par or better than existing image editing and model personalization baselines in preserving the custom object's identity while following the input text prompt and camera pose for the object.  
+                    However, such methods lack accurate camera view control w.r.t the object, and users must resort to prompt engineering (e.g., adding ``top-view'') to achieve coarse view control. In this work, we introduce a new task -- enabling explicit control of object viewpoint for model customization. This allows us to modify object properties amongst various background scenes via text prompts, all while incorporating the target camera pose as additional control. This new task presents significant challenges in merging a 3D representation from the multi-view images of the new concept with a general, 2D text-to-image model. To bridge this gap, we propose to condition the 2D diffusion process on rendered, view-dependent features of the new object. During training, we jointly adapt the 2D diffusion modules and 3D feature predictions to reconstruct the object's appearance and geometry while reducing overfitting to the input multi-view images. Our method performs on par or better than existing image editing and model personalization baselines in preserving the custom object's identity while following the input text prompt and camera pose for the object.  
                 </p>
                 
             </div>
@@ -241,7 +241,7 @@
                 <code>
                     @inproceedings{kumari2024customdiffusion360,<br>
                     &nbsp; author = {Kumari, Nupur and Su, Grace and Zhang, Richard and Park, Taesung and Shechtman, Eli and Zhu, Jun-Yan},<br>
-                    &nbsp; title  = {Customizing Text-to-Image Diffusion with Camera Viewpoint Control},<br>
+                    &nbsp; title  = {Customizing Text-to-Image Diffusion with Object Viewpoint Control},<br>
                     &nbsp; booktitle = {SIGGRAPH Asia},<br>
                     &nbsp; year   = {2024},<br>
                 }</code>
